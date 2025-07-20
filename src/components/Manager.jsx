@@ -16,9 +16,9 @@ const Manager = () => {
     const showPassword = () =>{
         passwordRef.current.type = "text"
         if (input.type = "password") {
-            passwordRef.current.type = "text";
+            input.current.type = "text";
         }else {
-            passwordRef.current.type = "password"
+            input.current.type = "password"
         }
     }
     const savePassword = () =>{
@@ -34,7 +34,7 @@ const Manager = () => {
  return (
     <>
       <div className="relative h-full w-full bg-slate-950"><div className="absolute bottom-0 left-0 right-0 top-0 bg-[radial-gradient(circle_500px_at_50%_200px,#3e3e3e,transparent)]"></div></div>
-      <div className=" bg-slate-200 mycontainer">
+      <div className="p-2 md:p-0 md:mycontainer bg-green-50 mx-auto max-w-4xl items-center">
         <h1 className='text-4xl text font-bold text-center'>
             <span className='text-green-800'>&lt;</span>
             Pass
@@ -43,7 +43,7 @@ const Manager = () => {
         <p className='text-green-700 text-lg text-center'>Your own Password Manager</p>
       <div className=' flex flex-col p-4 text-black gap-3 items-center'>
         <input value={form.site} onChange={handleChange} placeholder="Enter website URL" className='rounded-full border border-green-500 w-full p-4 py-1' type="text" name="site" id="" />
-        <div className='flex w-full justify-between gap-2'>
+        <div className='flex flex-col md:flex-row w-full justify-between gap-2'>
         <input value={form.username} onChange={handleChange} placeholder="Enter username" className='rounded-full border border-green-500 w-full p-4 py-1' type="text" name="username" />
         <div className="relative">
             <input ref={passwordRef} value={form.password} onChange={handleChange} placeholder="Password"className=' password  rounded-full border border-green-500 w-full p-4 py-1'  type="password" name="password"  />
